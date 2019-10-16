@@ -1,14 +1,32 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
-import SimpleHero from '../components/SimpleHero';
+import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import About from '../components/Home/About';
 import Services from '../components/Home/Services';
 
-export default () => (
+export const query = graphql`
+  query {
+    homeHero: file(name: { eq: "defaultBcg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
+
+export default ({
+  data: {
+    homeHero: {
+      childImageSharp: { fluid },
+    },
+  },
+}) => (
   <Layout>
-    <SimpleHero>
+    <StyledHero home img={fluid}>
       <Banner
         title={'continue exploring'}
         info={
@@ -19,7 +37,7 @@ export default () => (
           explore tours
         </Link>
       </Banner>
-    </SimpleHero>
+    </StyledHero>
     <About />
     <Services />
   </Layout>

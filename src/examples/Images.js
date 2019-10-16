@@ -5,23 +5,23 @@ import basicImage from '../images/connectBcg.jpeg';
 import Image from 'gatsby-image';
 
 const getImages = graphql`
-    query {
-      fixedImage: file(name: { eq: "defaultBcg" }) {
-        childImageSharp {
-          fixed(width: 300, height: 400) {
-            ...GatsbyImageSharpFixed_tracedSVG
-          }
-        }
-      }
-      fluidImage: file(name: { eq: "blogBcg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+  query {
+    fixedImage: file(name: { eq: "defaultBcg" }) {
+      childImageSharp {
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-  `;
+    fluidImage: file(name: { eq: "blogBcg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
 
 const Images = () => {
   const data = useStaticQuery(getImages);
@@ -34,11 +34,17 @@ const Images = () => {
       </article>
       <article>
         <h3>Fixed Image</h3>
-        <Image fixed={data.fixedImage.childImageSharp.fixed} alt={'fixed size image'} />
+        <Image
+          fixed={data.fixedImage.childImageSharp.fixed}
+          alt={'fixed size image'}
+        />
       </article>
       <article>
         <h3>Fluid Image</h3>
-        <Image fluid={data.fluidImage.childImageSharp.fluid} alt={'fluid size image'} />
+        <Image
+          fluid={data.fluidImage.childImageSharp.fluid}
+          alt={'fluid size image'}
+        />
       </article>
     </Container>
   );
@@ -54,6 +60,11 @@ const Container = styled.div`
   }
   .basic {
     width: 100%;
+  }
+  @media (min-width: 900px) {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
