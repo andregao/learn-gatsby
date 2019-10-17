@@ -16,6 +16,7 @@ module.exports = {
     data: ['a', 'b'],
   },
   plugins: [
+    `gatsby-plugin-playground`,
     'gatsby-plugin-styled-components',
     `gatsby-plugin-transition-link`,
     {

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import StyledHero from '../components/StyledHero';
+import Tours from '../components/Tours/Tours';
 
 export const query = graphql`
   query {
@@ -14,7 +15,6 @@ export const query = graphql`
     }
   }
 `;
-
 const tours = ({
   data: {
     homeHero: {
@@ -25,6 +25,7 @@ const tours = ({
   return (
     <Layout>
       <StyledHero img={fluid} />
+      <Tours />
     </Layout>
   );
 };
