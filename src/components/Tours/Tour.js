@@ -29,7 +29,7 @@ const Tour = ({ data }) => {
     <article className={css.tour}>
       <div className={css.imgContainer}>
         <GatsbyImage
-          fluid={images[3] ? images[3].fluid : defaultBcgFluid}
+          fluid={images[0] ? images[0].fluid : defaultBcgFluid}
           className={css.img}
         />
         <Link to={`/tours/${slug}`} className={css.link}>
