@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
 import Contact from '../components/Contact/Contact';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query {
@@ -25,6 +26,7 @@ const contact = ({
 }) => {
   return (
     <Layout>
+      <SEO title={'Contact'} />
       <StyledHero img={fluid} />
       <Contact />
     </Layout>

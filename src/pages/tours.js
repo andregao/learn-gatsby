@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import StyledHero from '../components/StyledHero';
 import Tours from '../components/Tours/Tours';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query {
@@ -24,6 +25,7 @@ const tours = ({
 }) => {
   return (
     <Layout>
+      <SEO title={'Tours'} />
       <StyledHero img={fluid} />
       <Tours />
     </Layout>

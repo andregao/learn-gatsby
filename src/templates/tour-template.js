@@ -6,6 +6,7 @@ import css from '../css/template.module.css';
 import { FaMoneyBillWave, FaMap } from 'react-icons/all';
 import GatsbyImage from 'gatsby-image';
 import Day from '../components/Tour/Day';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query($slug: String!) {
@@ -46,6 +47,7 @@ const TourTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={name}/>
       <StyledHero img={mainImage.fluid} />
       <section className={css.template}>
         <div className={css.center}>

@@ -4,6 +4,7 @@ import css from '../css/blog.module.css';
 import Title from '../components/Title';
 import { graphql, Link } from 'gatsby';
 import BlogCard from '../components/Blog/BlogCard';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -42,6 +43,7 @@ const Blog = props => {
 
   return (
     <Layout>
+      <SEO title={'Blogs'} />
       <section className={css.blog}>
         <Title title={'latest'} subtitle={'posts'} />
         <div className={css.center}>

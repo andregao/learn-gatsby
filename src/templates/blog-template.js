@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import css from '../css/single-blog.module.css';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query($slug: String!) {
@@ -44,6 +45,7 @@ const Blog = ({ data: { post } }) => {
   };
   return (
     <Layout>
+      <SEO title={title}/>
       <section className={css.blog}>
         <div className={css.center}>
           <h1>{title}</h1>
