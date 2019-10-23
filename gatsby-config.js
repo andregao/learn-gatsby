@@ -9,11 +9,13 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'backroads',
+    title: 'Backroads',
     description:
       'explore awesome worldwide tours and discover what makes each of them unique. Forget your daily routine, say yes to adventure',
     author: '@andregao',
-    data: ['a', 'b'],
+    twitterUsername: '@andregao',
+    image:'/defaultBcg.jpeg',
+    siteUrl:'https://learn-gatsby-cd.netlify.com'
   },
   plugins: [
     `gatsby-plugin-playground`,
@@ -35,5 +37,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

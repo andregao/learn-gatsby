@@ -6,6 +6,7 @@ import Banner from '../components/Banner';
 import About from '../components/Home/About';
 import Services from '../components/Home/Services';
 import FeaturedTours from '../components/Home/FeaturedTours';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query {
@@ -27,6 +28,7 @@ export default ({
   },
 }) => (
   <Layout>
+    <SEO title={'Home'}/>
     <StyledHero home img={fluid}>
       <Banner
         title={'continue exploring'}
@@ -41,6 +43,6 @@ export default ({
     </StyledHero>
     <About />
     <Services />
-    <FeaturedTours/>
+    <FeaturedTours />
   </Layout>
 );
