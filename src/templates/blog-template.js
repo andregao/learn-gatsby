@@ -1,7 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Layout from '../components/Layout';
-import Title from '../components/Title';
 import css from '../css/single-blog.module.css';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
