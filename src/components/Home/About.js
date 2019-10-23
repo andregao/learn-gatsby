@@ -9,7 +9,7 @@ const getAboutImage = graphql`
     aboutImage: file(name: { eq: "defaultBcg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
